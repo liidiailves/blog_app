@@ -9,3 +9,28 @@ body {
 .ql-editor {
   font-size: 1.05rem;
 }
+
+.post-content p {
+  margin-bottom: 0.5rem;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 1rem 0;
+}
+
+.post-content a {
+  color: rgb(74, 150, 180);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.dark .post-content a {
+  color: bisque;
+}
