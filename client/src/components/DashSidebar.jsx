@@ -52,7 +52,7 @@ export default function DashSidebar() {
                 icon={HiChartPie}
                 as="div"
               >
-                Dashboard
+                Töölaud
               </Sidebar.Item>
             </Link>
           )}
@@ -64,7 +64,7 @@ export default function DashSidebar() {
               labelColor="dark"
               as="div"
             >
-              Profile
+              {currentUser && currentUser.isAdmin ? "Profiil" : "Profile"}
             </Sidebar.Item>
           </Link>
           {currentUser.isAdmin && (
@@ -74,7 +74,7 @@ export default function DashSidebar() {
                 icon={HiDocumentText}
                 as="div"
               >
-                Posts
+                Postitused
               </Sidebar.Item>
             </Link>
           )}
@@ -86,7 +86,7 @@ export default function DashSidebar() {
                   icon={HiOutlineUserGroup}
                   as="div"
                 >
-                  Users
+                  Kasutajad
                 </Sidebar.Item>
               </Link>
               <Link to="/dashboard?tab=comments">
@@ -95,7 +95,7 @@ export default function DashSidebar() {
                   icon={HiAnnotation}
                   as="div"
                 >
-                  Comments
+                  Kommentaarid
                 </Sidebar.Item>
               </Link>
             </>
@@ -105,7 +105,7 @@ export default function DashSidebar() {
             className="cursor-pointer"
             onClick={handleSignout}
           >
-            Sign Out
+            {currentUser && currentUser.isAdmin ? "Logi välja" : "Sign Out"}
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
