@@ -131,10 +131,15 @@ export default function UpdatePost() {
             }
             value={formData.category}
           >
-            <option value="uncategorized">Select a category</option>
-            <option value="raamatud">raamatud</option>
-            <option value="muusika">muusika</option>
+            <option value="all">Select a category</option>
+            <option value="book">Books</option>
+            <option value="dev">Develop</option>
+            <option value="dream">Dreams</option>
+            <option value="hike">Hikes</option>
             <option value="love">Lexberry&apos;s Snow Star Love</option>
+            <option value="mood">Mood</option>
+            <option value="music">Music</option>
+            <option value="quote">Quotes</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
