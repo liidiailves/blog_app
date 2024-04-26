@@ -4,20 +4,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 import PostCard from "../components/PostCard";
 
 export default function Search() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [sidebarData, setSidebarData] = useState({
     searchTerm: "",
     sort: "desc",
     category: "uncategorized",
   });
-
-  console.log(sidebarData);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
-
-  const location = useLocation();
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -148,7 +145,7 @@ export default function Search() {
       </div>
       <div className="w-full">
         <h1 className="text-3xl font-semibold sm:border-b border-gray-300 p-3 mt-5 ">
-          Posts results:
+          Search results:
         </h1>
         <div className="p-7 flex flex-wrap gap-4">
           {!loading && posts.length === 0 && (
