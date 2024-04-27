@@ -79,11 +79,11 @@ export default function DashboardComponent() {
               <h3 className="text-gray-500 text-md uppercase">Kasutajad</h3>
               <p className="text-2xl">{totalUsers}</p>
             </div>
-            <HiOutlineUserGroup className="bg-teal-600 text-white rounded-full text-5xl p-3 shadow-lg" />
+            <HiOutlineUserGroup className="bg-sky-600 text-white rounded-full text-5xl p-3 shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="text-green-500 flex items-center">
-              <HiArrowNarrowUp />
+            <span className="text-sky-500 flex items-center">
+              {lastMonthUsers > 0 && <HiArrowNarrowUp />}
               {lastMonthUsers}
             </span>
             <span className="text-gray-500">eelmisel kuul</span>
@@ -95,11 +95,11 @@ export default function DashboardComponent() {
               <h3 className="text-gray-500 text-md uppercase">Postitused</h3>
               <p className="text-2xl">{totalPosts}</p>
             </div>
-            <HiDocumentText className="bg-lime-600 text-white rounded-full text-5xl p-3 shadow-lg" />
+            <HiDocumentText className="bg-sky-700 text-white rounded-full text-5xl p-3 shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="text-green-500 flex items-center">
-              <HiArrowNarrowUp />
+            <span className="text-sky-500 flex items-center">
+              {lastMonthPosts > 0 && <HiArrowNarrowUp />}
               {lastMonthPosts}
             </span>
             <span className="text-gray-500">eelmisel kuul</span>
@@ -111,11 +111,11 @@ export default function DashboardComponent() {
               <h3 className="text-gray-500 text-md uppercase">Kommentaarid</h3>
               <p className="text-2xl">{totalComments}</p>
             </div>
-            <HiAnnotation className="bg-indigo-600 text-white rounded-full text-5xl p-3 shadow-lg" />
+            <HiAnnotation className="bg-sky-800 text-white rounded-full text-5xl p-3 shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="text-green-500 flex items-center">
-              <HiArrowNarrowUp />
+            <span className="text-sky-500 flex items-center">
+              {lastMonthComments > 0 && <HiArrowNarrowUp />}
               {lastMonthComments}
             </span>
             <span className="text-gray-500">eelmisel kuul</span>
