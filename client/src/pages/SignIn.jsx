@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   signInStart,
@@ -47,6 +47,10 @@ export default function SignIn() {
       dispatch(signInFailure(error.message));
     }
   };
+
+  useEffect(() => {
+    dispatch(signInFailure(null));
+  }, [dispatch]);
 
   return (
     <div className="min-h-screnn mt-20">
