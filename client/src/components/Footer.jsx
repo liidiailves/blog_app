@@ -13,7 +13,7 @@ export default function FooterComponent() {
           <div className="mt-5">
             <Link
               to="/"
-              className="self-center text-sm sm:text-xl font-emilysCandy font-semibold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
+              className="self-center text-sm sm:text-xl font-emilysCandy font-semibold hover:font-extrabold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
             >
               Laiskliidu&apos;s Blog
             </Link>
@@ -26,20 +26,20 @@ export default function FooterComponent() {
               />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://www.laiskliidu.blogspot.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-500"
-                >
-                  Laiskliidu&apos;s Blogspot
-                </Footer.Link>
-                <Footer.Link
                   href="/about"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-500"
+                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 hover:font-bold dark:hover:text-sky-500"
                 >
                   Laiskliidu&apos;s Blog
+                </Footer.Link>
+                <Footer.Link
+                  href="https://www.laiskliidu.blogspot.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 hover:font-bold dark:hover:text-sky-500"
+                >
+                  Laiskliidu&apos;s Blogspot
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -53,13 +53,13 @@ export default function FooterComponent() {
                   href="https://github.com/liidiailves"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-500"
+                  className="text-sky-800 dark:text-sky-300 hover:font-bold hover:text-sky-600 dark:hover:text-sky-500"
                 >
                   Github
                 </Footer.Link>
                 <Footer.Link
                   href="#"
-                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-500"
+                  className="text-sky-800 dark:text-sky-300 hover:font-bold hover:text-sky-600 dark:hover:text-sky-500"
                 >
                   Discord
                 </Footer.Link>
@@ -73,13 +73,13 @@ export default function FooterComponent() {
               <Footer.LinkGroup col>
                 <Footer.Link
                   href="#"
-                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-500"
+                  className="text-sky-800 dark:text-sky-300 hover:font-bold hover:text-sky-600 dark:hover:text-sky-500"
                 >
                   Privacy Policy
                 </Footer.Link>
                 <Footer.Link
                   href="#"
-                  className="text-sky-800 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-500"
+                  className="text-sky-800 dark:text-sky-300 hover:font-bold hover:text-sky-600 dark:hover:text-sky-500"
                 >
                   Terms &amp; Conditions
                 </Footer.Link>

@@ -53,7 +53,7 @@ export default function Header() {
     <Navbar className="border-b-2 bg-gradient-to-r from-sky-100 via-sky-300 to-sky-500 rounded-lg dark:bg-gradient-to-r dark:from-sky-700 dark:via-sky-800 dark:to-sky-950">
       <Link
         to="/"
-        className="self-center text-sm sm:text-xl font-emilysCandy font-semibold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
+        className="self-center text-sm sm:text-xl font-emilysCandy font-semibold hover:font-extrabold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
       >
         Laiskliidu&apos;s Blog
       </Link>
@@ -109,7 +109,7 @@ export default function Header() {
         <Navbar.Link active={path === "/"} as={"div"}>
           <Link
             to="/"
-            className="font-emilysCandy text-sm sm:text-xl hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
+            className="font-emilysCandy text-sm sm:text-xl hover:font-bold hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
           >
             Home
           </Link>
@@ -117,7 +117,7 @@ export default function Header() {
         <Navbar.Link active={path === "/about"} as={"div"}>
           <Link
             to="/about"
-            className="font-emilysCandy text-sm sm:text-xl hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
+            className="font-emilysCandy text-sm sm:text-xl hover:font-bold hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
           >
             About
           </Link>
@@ -125,7 +125,7 @@ export default function Header() {
         <Navbar.Link active={path === "/love"} as={"div"}>
           <Link
             to="/love"
-            className="font-emilysCandy text-sm sm:text-xl hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
+            className="font-emilysCandy text-sm sm:text-xl hover:font-bold hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
           >
             Love
           </Link>

@@ -8,7 +8,7 @@ export default function CallToAction() {
       </div>
       <div className="flex-1 justify-center flex flex-col">
         <Button
-          className="bg-gradient-to-r from-cyan-200 to-orange-300 dark:bg-gradient-to-r dark:from-sky-950 dark:to-sky-700 rounded-br-2xl"
+          className="bg-gradient-to-r from-cyan-200 to-orange-300 dark:bg-gradient-to-r dark:from-sky-950 dark:to-sky-700 rounded-br-2xl hover:text-cyan-500 hover:font-bold"
           type="button"
           size="xs"
         >
