@@ -93,7 +93,7 @@ export default function FooterComponent() {
             href="#"
             by="Laiskliidu's blog"
             year={new Date().getFullYear()}
-            className="text-sky-800 dark:text-sky-300"
+            className="text-sky-800 dark:text-sky-300 hover:font-semibold"
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
             <Footer.Icon
