@@ -14,14 +14,14 @@ export default function Header() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get("searchTerm") || "";
+  });
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get("searchTerm");
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
+    const params = new URLSearchParams(location.search);
+    setSearchTerm(params.get("searchTerm") || "");
   }, [location.search]);
 
   const handleSignout = async () => {
@@ -43,10 +43,9 @@ export default function Header() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const urlParams = new URLSearchParams(location.search);
-    urlParams.set("searchTerm", searchTerm);
-    const searchQuery = urlParams.toString();
-    navigate(`/search?${searchQuery}`);
+    const params = new URLSearchParams(location.search);
+    params.set("searchTerm", searchTerm);
+    navigate(`/search?${params.toString()}`);
   };
 
   return (
