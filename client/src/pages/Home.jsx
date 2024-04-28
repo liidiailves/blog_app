@@ -18,16 +18,16 @@ export default function Home() {
   return (
     <div>
       <div className=" flex flex-col gap-6 lg:p-28 px-4 max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold lg:text-5xl">
+        <h1 className="text-3xl font-emilysCandy font-bold lg:text-5xl text-center">
           Welcome to Laiskliidu&apos;s blog
         </h1>
-        <p className="text-gray-500 text-xs sm:text-sm">
+        <p className="text-sky-700 text-sm sm:text-md">
           This blog is a collection of the colors of my life: thoughts, quotes,
           music, dreams, and adventures with my beloved companions.
         </p>
         <Link
           to="/search"
-          className="text-xs sm:text-sm text-sky-500 font-bold hover:underline"
+          className="text-xs sm:text-sm text-sky-500 font-bold hover:underline hover:font-bold text-center"
         >
           View all posts
         </Link>
