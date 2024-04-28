@@ -7,7 +7,12 @@ export default {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        baskervville: ["Baskervville", "font-serif"],
+        emilysCandy: ["Emilys Candy", "font-serif"],
+      },
+    },
   },
   plugins: [require("flowbite/plugin"), require("tailwind-scrollbar")],
 };

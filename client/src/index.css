@@ -34,3 +34,21 @@ body {
 .dark .post-content a {
   color: bisque;
 }
+
+.baskervville-regular {
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.baskervville-regular-italic {
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.emilys-candy-regular {
+  font-family: "Emilys Candy", serif;
+  font-weight: 400;
+  font-style: normal;
+}

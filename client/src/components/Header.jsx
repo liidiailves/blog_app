@@ -50,30 +50,27 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="border-b-2 bg-gradient-to-r from-sky-100 via-sky-300 to-sky-500 rounded-lg dark:bg-gradient-to-r dark:from-sky-700 dark:via-sky-800 dark:to-sky-950">
       <Link
         to="/"
-        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
+        className="self-center text-sm sm:text-xl font-emilysCandy font-semibold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
       >
-        <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white mr-2">
-          Laiskliidu&apos;s
-        </span>
-        Blog
+        Laiskliidu&apos;s Blog
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
           type="text"
           placeholder="Search..."
           rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
+          className="inline"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
       <div className="flex gap-2 md:order-2 items-center">
         <Button
-          className="w-10 h-8"
-          color="gray"
+          className="w-10 h-8 hover:bg-sky-600"
+          color="sky"
           pill
           onClick={() => dispatch(toggleTheme())}
         >
@@ -110,13 +107,28 @@ export default function Header() {
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"}>
-          <Link to="/">Home</Link>
+          <Link
+            to="/"
+            className="font-emilysCandy text-sm sm:text-xl hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
+          >
+            Home
+          </Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/about"} as={"div"}>
-          <Link to="/about">About</Link>
+          <Link
+            to="/about"
+            className="font-emilysCandy text-sm sm:text-xl hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
+          >
+            About
+          </Link>
         </Navbar.Link>
-        <Navbar.Link active={path === "/projects"} as={"div"}>
-          <Link to="/projects">Projects</Link>
+        <Navbar.Link active={path === "/love"} as={"div"}>
+          <Link
+            to="/love"
+            className="font-emilysCandy text-sm sm:text-xl hover:text-sky-500 text-sky-800 dark:text-sky-300 dark:hover:text-sky-500"
+          >
+            Love
+          </Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
