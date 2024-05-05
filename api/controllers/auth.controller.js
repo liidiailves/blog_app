@@ -4,7 +4,6 @@ import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 
 export const signup = async (req, res, next) => {
-  //   console.log(req.body);
   const { username, email, password } = req.body;
 
   if (
@@ -18,10 +17,20 @@ export const signup = async (req, res, next) => {
     next(errorHandler(400, "All fields are required"));
   }
 
+  if (username.length < 7 || username.length > 20) {
+    return next(
+      errorHandler(400, "Username must be between 7 and 20 characters long")
+    );
+  }
+  if (password.length < 6) {
+    return next(
+      errorHandler(400, "Password must be at least 6 characters long")
+    );
+  }
+
   const hashedPassword = bcryptjs.hashSync(password, 10);
 
   const newUser = new User({
-    // username: username.toLowerCase()
     username,
     email,
     password: hashedPassword,
