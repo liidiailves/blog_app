@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import moment from "moment";
+import { DateTime } from "luxon";
 import { FaThumbsUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Textarea, Button } from "flowbite-react";
@@ -50,6 +50,27 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
     }
   };
 
+  const customRelativeTime = (fromDate) => {
+    const now = DateTime.now();
+    const date = DateTime.fromISO(fromDate);
+    const diff = now.diff(date);
+
+    const days = diff.as("days");
+    if (days >= 30) {
+      return date.toRelativeCalendar();
+    } else if (days >= 1) {
+      return Math.floor(days) + " days ago";
+    } else {
+      const hours = diff.as("hours");
+      if (hours >= 1) {
+        return Math.floor(hours) + " hours ago";
+      } else {
+        const minutes = diff.as("minutes");
+        return Math.floor(minutes) + " minutes ago";
+      }
+    }
+  };
+
   return (
     <div className="flex p-4 border-b dark:border-gray-600 text-sm">
       <div className="flex-shrink-0 mr-3">
@@ -65,7 +86,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
             {user ? `@${user.username}` : "anonymous user"}
           </span>
           <span className="text-gray-500 text-xs">
-            {moment(comment.createdAt).fromNow()}
+            {customRelativeTime(comment.createdAt)}
           </span>
         </div>
         {isEditing ? (
