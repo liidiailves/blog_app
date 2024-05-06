@@ -13,7 +13,7 @@ export default function FooterComponent() {
           <div className="mt-5">
             <Link
               to="/"
-              className="self-center text-sm sm:text-xl font-emilysCandy font-semibold hover:font-extrabold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
+              className="self-center text-sm sm:text-xl font-sedan font-semibold hover:font-extrabold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
             >
               Laiskliidu&apos;s Blog
             </Link>
@@ -22,7 +22,7 @@ export default function FooterComponent() {
             <div>
               <Footer.Title
                 title="About"
-                className="font-emilysCandy text-sky-700 dark:text-sky-300"
+                className="font-sedan text-sky-700 dark:text-sky-300"
               />
               <Footer.LinkGroup col>
                 <Footer.Link
@@ -46,7 +46,7 @@ export default function FooterComponent() {
             <div>
               <Footer.Title
                 title="Follow Me"
-                className="font-emilysCandy text-sky-700 dark:text-sky-300"
+                className="font-sedan text-sky-700 dark:text-sky-300"
               />
               <Footer.LinkGroup col>
                 <Footer.Link
@@ -68,7 +68,7 @@ export default function FooterComponent() {
             <div>
               <Footer.Title
                 title="Legal"
-                className="font-emilysCandy text-sky-700 dark:text-sky-300"
+                className="font-sedan text-sky-700 dark:text-sky-300"
               />
               <Footer.LinkGroup col>
                 <Footer.Link

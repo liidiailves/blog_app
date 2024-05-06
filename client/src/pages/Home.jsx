@@ -27,7 +27,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-sky-100 dark:bg-sky-700 bg-opacity-30 dark:bg-opacity-40"></div>
         <div className="flex-grow"></div>
         <div className="w-full mx-auto p-6 sm:pt-8 sm:px-20 bg-sky-100 dark:bg-sky-800 bg-opacity-60 shadow-xl z-10">
-          <h1 className="text-4xl font-emilysCandy font-semibold text-sky-800 dark:text-sky-200 lg:text-6xl text-center">
+          <h1 className="text-4xl font-sedan font-semibold text-sky-800 dark:text-sky-200 lg:text-6xl text-center">
             Welcome to Laiskliidu&apos;s blog
           </h1>
           <p className="mt-6 text-lg text-sky-700 dark:text-sky-300 text-center">
@@ -44,7 +44,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Additional spacer if needed to balance */}
         <div className="mb-10 md:mb-0"></div>
       </div>
       <div className="p-4 bg-gradient-to-r from-sky-100 to-sky-400 dark:bg-gradient-to-r dark:from-slate-500 dark:to-slate-800">

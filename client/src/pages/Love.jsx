@@ -7,7 +7,7 @@ export default function Love() {
         <p className="text-md text-sky-700 dark:text-sky-500 flex flex-col mt-6 text-center">
           Jack Russell Terrier
         </p>
-        <h1 className="text-3xl font-emilysCandy font-semibold text-center my-2">
+        <h1 className="text-3xl font-sedan font-semibold text-center my-2">
           Lexberry&apos;s
           <br /> Snow Star
           <br /> Love

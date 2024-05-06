@@ -10,7 +10,7 @@ export default {
     extend: {
       fontFamily: {
         baskervville: ["Baskervville", "font-serif"],
-        emilysCandy: ["Emilys Candy", "font-serif"],
+        sedan: ["Sedan SC", "font-serif"],
       },
     },
   },

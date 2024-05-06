@@ -9,7 +9,7 @@ export default function About() {
       </div>
       <div className="max-w-2xl min-h-screen p-4 text-center bg-sky-100 dark:bg-sky-800 bg-opacity-50 shadow-xl z-10">
         <div>
-          <h1 className="text-3xl font-emilysCandy font-semibold text-center my-10">
+          <h1 className="text-3xl font-sedan font-semibold text-center my-10">
             About Laiskliidu:
           </h1>
           <div className="text-md text-sky-700 dark:text-sky-500 flex flex-col gap-2 my-6">
