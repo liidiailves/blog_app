@@ -142,7 +142,7 @@ export default function Search() {
               <option value="quote">Quotes</option>
             </Select>
           </div>
-          <Button type="submit" outline gradientDuoTone="purpleToPink">
+          <Button type="submit" outline gradientDuoTone="purpleToBlue">
             Apply Filters
           </Button>
         </form>

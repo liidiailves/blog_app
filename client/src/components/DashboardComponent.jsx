@@ -126,7 +126,7 @@ export default function DashboardComponent() {
         <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
           <div className="flex justify-between p-3 text-md font-semibold">
             <h2 className="text-center p-2">Viimatised kasutajad</h2>
-            <Button outline gradientDuoTone="purpleToPink">
+            <Button outline gradientDuoTone="purpleToBlue">
               <Link to={"/dashboard?tab=users"}>Näita kõiki</Link>
             </Button>
           </div>
@@ -155,7 +155,7 @@ export default function DashboardComponent() {
         <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
           <div className="flex justify-between p-3 text-md font-semibold">
             <h2 className="text-center p-2">Viimatised postitused</h2>
-            <Button outline gradientDuoTone="purpleToPink">
+            <Button outline gradientDuoTone="purpleToBlue">
               <Link to={"/dashboard?tab=posts"}>Näita kõiki</Link>
             </Button>
           </div>
@@ -178,7 +178,7 @@ export default function DashboardComponent() {
         <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
           <div className="flex justify-between p-3 text-md font-semibold">
             <h2 className="text-center p-2">Viimatised kommentaarid</h2>
-            <Button outline gradientDuoTone="purpleToPink">
+            <Button outline gradientDuoTone="purpleToBlue">
               <Link to={"/dashboard?tab=comments"}>Näita kõiki</Link>
             </Button>
           </div>

@@ -180,7 +180,7 @@ export default function UpdatePost() {
           required
           onChange={(value) => setFormData({ ...formData, content: value })}
         />
-        <Button type="submit" gradientDuoTone="purpleToPink">
+        <Button type="submit" gradientDuoTone="purpleToBlue">
           Update post
         </Button>
         {publishError && (

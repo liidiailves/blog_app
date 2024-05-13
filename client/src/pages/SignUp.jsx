@@ -131,7 +131,7 @@ export default function SignUp() {
               />
             </div>
             <Button
-              gradientDuoTone="purpleToPink"
+              gradientDuoTone="purpleToBlue"
               type="submit"
               disabled={loading}
             >
