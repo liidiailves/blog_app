@@ -90,10 +90,14 @@ export default function Header() {
               </span>
             </Dropdown.Header>
             <Link to={"/dashboard?tab=profile"}>
-              <Dropdown.Item>Profile</Dropdown.Item>
+              <Dropdown.Item>
+                {currentUser.isAdmin ? "Profiil" : "Profile"}
+              </Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign Out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout}>
+              {currentUser.isAdmin ? "Logi välja" : "Sign Out"}
+            </Dropdown.Item>
           </Dropdown>
         ) : (
           <Link to="/sign-in">

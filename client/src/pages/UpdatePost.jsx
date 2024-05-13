@@ -111,12 +111,14 @@ export default function UpdatePost() {
 
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
-      <h1 className="text-center text-3xl my-6 font-semibold">Update post</h1>
+      <h1 className="text-center text-3xl my-6 font-semibold">
+        Muuda postitust
+      </h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Title"
+            placeholder="Pealkiri"
             required
             id="title"
             className="flex-1"
@@ -131,7 +133,7 @@ export default function UpdatePost() {
             }
             value={formData.category}
           >
-            <option value="all">Select a category</option>
+            <option value="all">Vali kategooria</option>
             <option value="book">Books</option>
             <option value="dev">Develop</option>
             <option value="dream">Dreams</option>
@@ -164,7 +166,7 @@ export default function UpdatePost() {
                 />
               </div>
             ) : (
-              "Upload Image"
+              "Lae pilt"
             )}
           </Button>
         </div>
@@ -175,13 +177,13 @@ export default function UpdatePost() {
         <ReactQuill
           value={formData.content}
           theme="snow"
-          placeholder="Write something..."
+          placeholder="Kirjuta midagi..."
           className="h-72 mb-10"
           required
           onChange={(value) => setFormData({ ...formData, content: value })}
         />
         <Button type="submit" gradientDuoTone="purpleToBlue">
-          Update post
+          Uuenda postitust
         </Button>
         {publishError && (
           <Alert className="mt-4" color="failure">

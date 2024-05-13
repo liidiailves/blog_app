@@ -78,12 +78,12 @@ export default function DashPosts() {
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
-              <Table.HeadCell>Date updated</Table.HeadCell>
-              <Table.HeadCell>Post title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell>Viimati uuendatud</Table.HeadCell>
+              <Table.HeadCell>Pealkiri</Table.HeadCell>
+              <Table.HeadCell>Kategooria</Table.HeadCell>
+              <Table.HeadCell>Kustuta</Table.HeadCell>
               <Table.HeadCell>
-                <span>Edit</span>
+                <span>Muuda</span>
               </Table.HeadCell>
             </Table.Head>
             {userPosts.map((post) => (

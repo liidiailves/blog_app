@@ -171,7 +171,9 @@ export default function DashProfile() {
 
   return (
     <div className="max-w-lg mx-auto p-3 w-full">
-      <h1 className="my-6 text-center font-semibold text-3xl">Profile</h1>
+      <h1 className="my-6 text-center font-semibold text-3xl">
+        {currentUser.isAdmin ? "Profiil" : "Profile"}
+      </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="file"
@@ -244,7 +246,7 @@ export default function DashProfile() {
           outline
           disabled={loading || imageFileUploading}
         >
-          {loading ? "Loading..." : "Update"}
+          {loading ? "Loading..." : currentUser.isAdmin ? "Muuda" : "Update"}
         </Button>
         {currentUser.isAdmin && (
           <Link to={"/create-post"}>
@@ -253,17 +255,17 @@ export default function DashProfile() {
               gradientDuoTone="purpleToBlue"
               className="w-full"
             >
-              Create a post
+              Loo uus postitus
             </Button>
           </Link>
         )}
       </form>
       <div className="text-red-500 flex justify-between mt-5">
         <span onClick={() => setShowModal(true)} className="cursor-pointer">
-          Delete Account
+          {currentUser.isAdmin ? "Kustuta konto" : "Delete Account"}
         </span>
         <span onClick={handleSignout} className="cursor-pointer">
-          Sign Out
+          {currentUser.isAdmin ? "Logi välja" : "Sign Out"}
         </span>
       </div>
       {updateUserSuccess && (

@@ -78,12 +78,12 @@ export default function DashComments() {
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
-              <Table.HeadCell>Date updated</Table.HeadCell>
-              <Table.HeadCell>Comment content</Table.HeadCell>
-              <Table.HeadCell>Number of likes</Table.HeadCell>
-              <Table.HeadCell>PostId</Table.HeadCell>
-              <Table.HeadCell>UserId</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell>Viimati uuendatud</Table.HeadCell>
+              <Table.HeadCell>Kommentaar</Table.HeadCell>
+              <Table.HeadCell>Meeldimised</Table.HeadCell>
+              <Table.HeadCell>Postituse Id</Table.HeadCell>
+              <Table.HeadCell>Kasutaja Id</Table.HeadCell>
+              <Table.HeadCell>Kustuta</Table.HeadCell>
             </Table.Head>
             {comments.map((comment) => (
               // eslint-disable-next-line react/jsx-key

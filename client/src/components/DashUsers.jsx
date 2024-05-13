@@ -71,12 +71,12 @@ export default function DashUsers() {
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
-              <Table.HeadCell>Date created</Table.HeadCell>
-              <Table.HeadCell>User image</Table.HeadCell>
-              <Table.HeadCell>Username</Table.HeadCell>
+              <Table.HeadCell>Loomise kuupäev</Table.HeadCell>
+              <Table.HeadCell>Kasutajapilt</Table.HeadCell>
+              <Table.HeadCell>Kasutajanimi</Table.HeadCell>
               <Table.HeadCell>Email</Table.HeadCell>
               <Table.HeadCell>Admin</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell>Kustuta</Table.HeadCell>
             </Table.Head>
             {users.map((user) => (
               // eslint-disable-next-line react/jsx-key

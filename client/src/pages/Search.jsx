@@ -103,9 +103,9 @@ export default function Search() {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="p-6 border-b md:border-r md:min-h-screen border-gray-300">
-        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-          <div className="flex   items-center gap-2">
+      <div className="p-4 border-b md:border-r md:min-h-screen border-gray-300">
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <div className="flex items-center gap-2">
             <label className="whitespace-nowrap font-semibold">
               Search Term:
             </label>

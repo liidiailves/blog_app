@@ -84,12 +84,12 @@ export default function CreatePost() {
 
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
-      <h1 className="text-center text-3xl my-6 font-semibold">Create a post</h1>
+      <h1 className="text-center text-3xl my-6 font-semibold">Loo postitus</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Title"
+            placeholder="Pealkiri"
             required
             id="title"
             className="flex-1"
@@ -102,7 +102,7 @@ export default function CreatePost() {
               setFormData({ ...formData, category: e.target.value })
             }
           >
-            <option value="all">Select a category</option>
+            <option value="all">Vali kategooria</option>
             <option value="book">Books</option>
             <option value="dev">Develop</option>
             <option value="dream">Dreams</option>
@@ -135,7 +135,7 @@ export default function CreatePost() {
                 />
               </div>
             ) : (
-              "Upload Image"
+              "Lae pilt"
             )}
           </Button>
         </div>
@@ -145,13 +145,13 @@ export default function CreatePost() {
         )}
         <ReactQuill
           theme="snow"
-          placeholder="Write something..."
+          placeholder="Kirjuta midagi..."
           className="h-72 mb-10"
           required
           onChange={(value) => setFormData({ ...formData, content: value })}
         />
         <Button type="submit" gradientDuoTone="purpleToBlue">
-          Publish
+          Avalda
         </Button>
         {publishError && (
           <Alert className="mt-4" color="failure">
