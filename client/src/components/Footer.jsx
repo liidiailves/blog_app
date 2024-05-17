@@ -10,7 +10,7 @@ export default function FooterComponent() {
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid w-full justify-between sm:flex md:grid-cols-1">
-          <div className="mt-5">
+          <div>
             <Link
               to="/"
               className="self-center text-sm sm:text-xl font-sedan font-semibold hover:font-extrabold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"

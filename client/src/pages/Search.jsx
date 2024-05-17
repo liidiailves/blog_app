@@ -105,7 +105,7 @@ export default function Search() {
     <div className="flex flex-col md:flex-row">
       <div className="p-4 border-b md:border-r md:min-h-screen border-gray-300">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-between">
             <label className="whitespace-nowrap font-semibold">
               Search Term:
             </label>
@@ -124,7 +124,7 @@ export default function Search() {
               <option value="asc">Oldest</option>
             </Select>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-between">
             <label className="font-semibold">Category:</label>
             <Select
               onChange={handleChange}

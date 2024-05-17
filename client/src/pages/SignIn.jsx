@@ -53,16 +53,16 @@ export default function SignIn() {
   }, [dispatch]);
 
   return (
-    <div className="min-h-screnn mt-20">
-      <div className="flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-6">
         <div className="flex-1">
-          <Link to="/" className="font-bold dark:text-white text-4xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white mr-2">
-              Laiskliidu
-            </span>
-            Blogi
+          <Link
+            to="/"
+            className="self-center text-sm sm:text-xl font-sedan font-semibold hover:font-extrabold dark:text-sky-50 hover:text-sky-500 dark:hover:text-sky-500"
+          >
+            Laiskliidu&apos;s Blog
           </Link>
-          <p className="text-sm mt-5">
+          <p className="text-sm mt-6">
             This is a blog created by Laiskliidu. You can sign in with your
             email and password or with Google.
           </p>
@@ -103,14 +103,17 @@ export default function SignIn() {
             </Button>
             <OAuth />
           </form>
-          <div className=" flex gap-2 text-sm mt-5">
+          <div className=" flex gap-2 text-sm mt-6">
             <span>Don&apos;t have an account?</span>
-            <Link to="/sign-up" className="text-blue-500">
+            <Link
+              to="/sign-up"
+              className="text-blue-500 font-medium hover:text-blue-700 hover:font-semibold"
+            >
               Sign Up
             </Link>
           </div>
           {errorMessage && (
-            <Alert className="mt-5" color="failure">
+            <Alert className="mt-6" color="failure">
               {errorMessage}
             </Alert>
           )}
