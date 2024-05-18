@@ -50,7 +50,7 @@ export default function PostPage() {
     } catch (error) {
       console.log(error.message);
     }
-  });
+  }, []);
 
   if (loading)
     return (
@@ -58,33 +58,51 @@ export default function PostPage() {
         <Spinner size="xl" />
       </div>
     );
+
+  if (error)
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <p>Something went wrong. Please try again later.</p>
+      </div>
+    );
+
+  if (!post)
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <p>No posts found.</p>
+      </div>
+    );
+
   return (
-    <main className="p-4 flex flex-col max-w-6xl mx-auto min-h-screen">
+    <main className="p-4 flex flex-col max-w-6xl mx-auto min-h-screen clearfix">
       <h1 className="text-3xl mt-10 p-2 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
-        {post && post.title}
+        {post.title}
       </h1>
       <div className="flex justify-between p-2 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs">
         <span className="self-center">
-          {post && new Date(post.createdAt).toLocaleDateString()}
+          {new Date(post.createdAt).toLocaleDateString()}
         </span>
-        <Link
-          to={`/search?category=${post && post.category}`}
-          className="self-center"
-        >
+        <Link to={`/search?category=${post.category}`} className="self-center">
           <Button color="gray" pill size="xs">
-            {post && post.category}
+            {post.category}
           </Button>
         </Link>
       </div>
-      <img
-        src={post && post.image}
-        alt={post && post.title}
-        className="mt-10 p-2 max-h-[600px] w-full object-cover"
-      />
+      {post.images && post.images.length > 0 && (
+        <div className="mt-10 p-2 max-w-2xl mx-auto w-full">
+          {post.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`${post.title}-${index}`}
+              className="mb-4 w-full max-h-[400px] object-contain"
+            />
+          ))}
+        </div>
+      )}
       <div
-        //   "post-content" is css class styled in index.css
         className="p-2 max-w-2xl mx-auto w-full post-content"
-        dangerouslySetInnerHTML={{ __html: post && post.content }}
+        dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
       <div className="max-w-4xl mx-auto w-full">
         <CallToAction />

@@ -19,10 +19,10 @@ export default function UpdatePost() {
   const { postId } = useParams();
   const { currentUser } = useSelector((state) => state.user);
 
-  const [file, setFile] = useState(null);
-  const [imageUploadProgress, setImageUploadProgress] = useState(null);
+  const [files, setFiles] = useState([]);
+  const [imageUploadProgress, setImageUploadProgress] = useState({});
   const [imageUploadError, setImageUploadError] = useState(null);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ images: [] });
   const [publishError, setPublishError] = useState(null);
 
   useEffect(() => {
@@ -46,39 +46,58 @@ export default function UpdatePost() {
     }
   }, [postId]);
 
-  const handleUploadImage = async () => {
+  const handleUploadImages = async () => {
     try {
-      if (!file) {
-        setImageUploadError("Please select an image");
+      if (files.length === 0) {
+        setImageUploadError("Please select at least one image");
         return;
       }
       setImageUploadError(null);
       const storage = getStorage(app);
-      const fileName = new Date().getTime() + "-" + file.name;
-      const storageRef = ref(storage, fileName);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setImageUploadProgress(progress.toFixed(0));
-        },
-        (error) => {
-          setImageUploadError("Image upload failed");
-          setImageUploadProgress(null);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setImageUploadError(null);
-            setImageUploadProgress(null);
-            setFormData({ ...formData, image: downloadURL });
-          });
-        }
-      );
+      const uploadPromises = files.map((file, index) => {
+        const fileName = new Date().getTime() + "-" + file.name;
+        const storageRef = ref(storage, fileName);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+        return new Promise((resolve, reject) => {
+          uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+              const progress =
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              setImageUploadProgress((prevProgress) => ({
+                ...prevProgress,
+                [index]: progress.toFixed(0),
+              }));
+            },
+            (error) => {
+              setImageUploadError("Image upload failed");
+              setImageUploadProgress((prevProgress) => ({
+                ...prevProgress,
+                [index]: null,
+              }));
+              reject(error);
+            },
+            () => {
+              getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                setImageUploadError(null);
+                setImageUploadProgress((prevProgress) => ({
+                  ...prevProgress,
+                  [index]: null,
+                }));
+                resolve(downloadURL);
+              });
+            }
+          );
+        });
+      });
+
+      const downloadURLs = await Promise.all(uploadPromises);
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        images: [...prevFormData.images, ...downloadURLs],
+      }));
     } catch (error) {
       setImageUploadError("Image upload failed");
-      setImageUploadProgress(null);
     }
   };
 
@@ -148,22 +167,34 @@ export default function UpdatePost() {
           <FileInput
             type="file"
             accept="image/*"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => setFiles(Array.from(e.target.files))}
           />
           <Button
             type="button"
             gradientDuoTone="purpleToBlue"
             size="sm"
             outline
-            onClick={handleUploadImage}
-            disabled={imageUploadProgress}
+            onClick={handleUploadImages}
+            disabled={
+              files.length === 0 ||
+              Object.values(imageUploadProgress).some(
+                (progress) => progress !== null
+              )
+            }
           >
-            {imageUploadProgress ? (
+            {Object.values(imageUploadProgress).some(
+              (progress) => progress !== null
+            ) ? (
               <div className="w-16 h-16">
-                <CircularProgressbar
-                  value={imageUploadProgress}
-                  text={`${imageUploadProgress || 0}%`}
-                />
+                {Object.values(imageUploadProgress).map((progress, index) =>
+                  progress !== null ? (
+                    <CircularProgressbar
+                      key={index}
+                      value={progress}
+                      text={`${progress}%`}
+                    />
+                  ) : null
+                )}
               </div>
             ) : (
               "Lae pilt"
@@ -171,9 +202,15 @@ export default function UpdatePost() {
           </Button>
         </div>
         {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
-        {formData.image && (
-          <img src={formData.image} alt="upload" className="w-full h-full" />
-        )}
+        {formData.images &&
+          formData.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`upload-${index}`}
+              className="w-full max-h-[400px] object-contain"
+            />
+          ))}
         <ReactQuill
           value={formData.content}
           theme="snow"
