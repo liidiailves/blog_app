@@ -185,7 +185,6 @@ export default function CreatePost() {
           theme="snow"
           placeholder="Kirjuta midagi..."
           className="h-72 mb-10"
-          required
           onChange={(value) => setFormData({ ...formData, content: value })}
         />
         <Button type="submit" gradientDuoTone="purpleToBlue">
